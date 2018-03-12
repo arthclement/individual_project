@@ -1,0 +1,19 @@
+{
+    "name": "etudiant/individual_project",
+    "description": "Individual Project",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "arthclement",
+            "email": "arthclems@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "": "/src"
+        }
+    }
+}
