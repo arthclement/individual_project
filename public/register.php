@@ -24,15 +24,27 @@ if ($usernameCheck && $passwordCheck) {
         echo 'An error occured, please contact support';
         exit(1);
     }
+    
+    $sqlCheck = "SELECT username FROM register.user WHERE username=\"$username\"";
+    $sqlInsertion = "INSERT INTO user(username, password) VALUES (\"$username\", \"$password_1\")";
 
-    $sql = "INSERT INTO user(username, password) VALUES (\"$username\", \"$password_1\")";
-    $affected = $connection->exec($sql);
+    $sqlQuery = $connection->prepare($sqlCheck);
+    $sqlQuery->execute();
+    $usernameResultDB = $sqlQuery->fetchAll();
 
-    if (!$affected) {
-        echo implode(',', $connection->errorInfo());
-        exit(1);
+    if (!$usernameResultDB) {
+        $affected = $connection->exec($sqlInsertion);
+        if (!$affected) {
+            echo implode(',', $connection->errorInfo());
+            exit(1);
+        }
+    } else {
+        echo 'Username already taken';
+        return;
     }
+
 }
+
 
 ?>
 <!DOCTYPE html>
