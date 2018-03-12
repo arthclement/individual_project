@@ -1,4 +1,6 @@
 <?php
+include_once __DIR__.'/../src/service/init.php';
+require_once __DIR__.'/../src/service/DBConnector.php';
 
 $username = $_POST['username'];
 $password_1 = $_POST['password_1'];
@@ -45,6 +47,6 @@ if ($usernameCheck && $passwordCheck) {
     <h1>You're successfully registered!</h1>
     <p>Your username is: <?php echo $username ?></p>
     <p>Your password is: <?php echo $password_1 ?></p>
-    <a href="login.php">Go back to login page</a>
+    <a href="index.php">Go back to login page</a>
 </body>
 </html>
