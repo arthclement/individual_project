@@ -10,7 +10,7 @@ class DBConnector {
      * @param array $config Example: [
      * 'driver' => 'mysql',
      * 'host' => 'localhost',
-     * 'dbname' => 'tableName',
+     * 'dbname' => 'dbName',
      * 'dbuser' => 'username',
      * 'dbpass' => 'password'
      * ]
