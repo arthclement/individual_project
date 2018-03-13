@@ -4,8 +4,6 @@ require_once __DIR__.'/../src/service/DBConnector.php';
 
 $username = $_POST['username'];
 $password = $_POST['password'];
-$passwordCheck = false;
-$usernameCheck = false;
     
 try {
     $connection = Service\DBConnector::getConnection();
@@ -42,5 +40,8 @@ $_SESSION['user_id'] = $usernameReturnDB[0]['iduser'];
     <h1>You're successfully logged in!</h1>
     <p>Welcome <?php echo $_SESSION['username']; ?>!</p>
     <p>Your userID is <?php echo $_SESSION['user_id']; ?></p>
+    <form action="logout.php" method="post">
+        <button type="submit">Logout</button>
+    </form>
 </body>
 </html>
