@@ -3,6 +3,7 @@
 include_once __DIR__.'/../src/service/init.php';
 require_once __DIR__.'/../src/service/DBConnector.php';
 
+session_start();
 $newUsername = $_POST['newUsername'];
 $oldUsername = $_SESSION['username'];
 
@@ -16,8 +17,7 @@ try {
 
 $sqlUpdateUsername = "UPDATE user SET username=\"$newUsername\" WHERE username=\"$oldUsername\"";
 
-$sqlQuery = $connection->prepare($sqlUpdateUsername);
-$sqlQuery->execute();
+$connection->exec($sqlUpdateUsername);
 
 session_abort();
 session_destroy();
