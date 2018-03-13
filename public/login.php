@@ -43,5 +43,23 @@ $_SESSION['user_id'] = $usernameReturnDB[0]['iduser'];
     <form action="logout.php" method="post">
         <button type="submit">Logout</button>
     </form>
+    <form action="change_username.php" method="post">
+        <label for="newUsername">Your new username</label>
+        <input type="text" name="newUsername">
+        <br>
+        <button type="submit">Change username</button>
+    </form>
+    <form action="change_password.php" method="post">
+        <label for="currentPassword">Your current password</label>
+        <input type="password" name="currentPassword">
+        <br>
+        <label for="password_1">Your new password</label>
+        <input type="text" name="password_1">
+        <br>
+        <label for="password_2">Confirm new password</label>
+        <input type="text" name="password_2">
+        <br>
+        <button type="submit">Change password</button>
+    </form>
 </body>
 </html>

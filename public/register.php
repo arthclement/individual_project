@@ -42,10 +42,6 @@ if ($usernameCheck && $passwordCheck) {
         echo 'Username already taken';
         return;
     }
-
-}
-
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -60,5 +56,21 @@ if ($usernameCheck && $passwordCheck) {
     <p>Your username is: <?php echo $username ?></p>
     <p>Your password is: <?php echo $password_1 ?></p>
     <a href="index.php">Go back to login page</a>
+</body>
+</html>
+<?php
+    return;
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register failed</title>
+</head>
+<body>
+    <h1>The two passwords are not identical</h1>
 </body>
 </html>
